@@ -1,6 +1,8 @@
 import styles from './Phonebook.module.css'
+import { useMycontext } from "../contexts/Context";
 
-export const Phonebook = ({addContact}) => {
+export const Phonebook = () => {
+    const {addContact} = useMycontext()
     const handleSubmit = evt => {
         evt.preventDefault();
         const form = evt.currentTarget;
