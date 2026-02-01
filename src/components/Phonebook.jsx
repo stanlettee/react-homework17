@@ -1,7 +1,8 @@
 import styles from './Phonebook.module.css'
 import { useMycontext } from "../contexts/Context";
+import React from "react";
 
-export const Phonebook = () => {
+export const Phonebook = React.memo(() => {
     const {addContact} = useMycontext()
     const handleSubmit = evt => {
         evt.preventDefault();
@@ -24,4 +25,4 @@ export const Phonebook = () => {
             </form>
         </div>
     )
-}
+})

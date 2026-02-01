@@ -1,8 +1,9 @@
 import styles from "./Contacts.module.css"
 import { useMycontext } from "../contexts/Context";
 import { useRef, useEffect } from "react";
+import React from "react";
 
-export const Contacts = () => {
+export const Contacts = React.memo(() => {
     const {deleteContact, visibleContacts, changeFilter, filter} = useMycontext()
     const inputRef = useRef(null)
     useEffect(() => {
@@ -26,4 +27,4 @@ export const Contacts = () => {
             </ul>
         </div>
 )
-}
+})
